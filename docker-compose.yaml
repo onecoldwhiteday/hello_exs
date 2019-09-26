@@ -5,13 +5,36 @@ services:
     container_name: postgres_flypost
     image: postgres:11
     environment:
-      POSTGRES_DB: hello_dev
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: flypost
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
     ports:
       - 5432:5432
     volumes:
       - postgres_volume:/var/lib/postgresql/data
+    networks:
+      - main
+      - postgres
+
+  pgadmin:
+    container_name: pgadmin_flypost
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: pgadmin@mail.db
+      PGADMIN_DEFAULT_PASSWORD: 1234
+    volumes:
+      - pgadmin_volume:/var/lib/pgadmin
+    ports:
+      - 8080:80
+    networks:
+      - postgres
 
 volumes:
+  pgadmin_volume:
   postgres_volume:
+
+networks:
+  main:
+    driver: bridge
+  postgres:
+    driver: bridge
