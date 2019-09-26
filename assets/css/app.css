@@ -1,1 +1,17 @@
 /* This file is for your main application css. */
+.auth0-logo {
+    width: 80px;
+    height: 80px;
+    display: inline-block;
+    background-image: url(https://styles.redditmedia.com/t5_2vhb3/styles/communityIcon_fiwg0usddt131.png);
+    background-repeat: no-repeat;
+    background-size: 80px;
+  }
+
+  .jumbotron .flip-clock-wrapper {
+    text-align: center;
+    position: relative;
+    width: auto;
+    margin-top: 8em;
+    display: inline-block;
+ }
