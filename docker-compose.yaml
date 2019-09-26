@@ -1,0 +1,17 @@
+version: '3.0'
+
+services:
+  postgres:
+    container_name: postgres_flypost
+    image: postgres:11
+    environment:
+      POSTGRES_DB: hello_dev
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - 5432:5432
+    volumes:
+      - postgres_volume:/var/lib/postgresql/data
+
+volumes:
+  postgres_volume:
