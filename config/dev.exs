@@ -53,7 +53,7 @@ config :hello, Hello.Repo,
   adapter: Ecto.Adapters.Postgres,
   username: "postgres",
   password: "postgres",
-  database: "flypost",
+  database: "hello_dev",
   hostname: "localhost",
   port: 5432,
   pool_size: 10
